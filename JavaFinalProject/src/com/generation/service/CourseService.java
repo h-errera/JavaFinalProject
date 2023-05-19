@@ -78,6 +78,10 @@ public class CourseService
 
     public void showSummary()
     {
+        //printing out every course in our courses map by grabbing every key
+        //passing through a loop body
+        //saving course specified by a key to a local course variable
+        //print
         System.out.println( "Available Courses:" );
         for ( String key : courses.keySet() )
         {

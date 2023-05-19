@@ -28,29 +28,15 @@ public class StudentService
     public void showSummary()
     {
         //TODO implement
-        // Retrieve the necessary information from the Student objects and print a summary
-        // Use System.out.println() to print out the summary to the console
-
-        // Iterate over the students and print a summary for each student
-        for (Student student : students) {
-            System.out.println("Student ID: " + student.getId());
-            System.out.println("Name: " + student.getName());
-
-            List<Course> enrolledCourses = student.getEnrolledCourses();
-
-            if (enrolledCourses.isEmpty()) {
-                System.out.println("Enrolled Courses: None");
-            } else {
-                System.out.println("Enrolled Courses:");
-
-                for (Course course : enrolledCourses) {
-                    System.out.println("- " + course.getCourseCode() + ": " + course.getCourseName());
-                }
-            }
-
-            System.out.println("------------");
+        //Show a summary of all the students active in our roster
+        //instance field = students
+        //replace courses with students
+        System.out.println( "Students:" );
+        for ( String key : students.keySet() )
+        {
+           Student student = students.get( key );
+            System.out.println( student );
         }
-    }
 }
 
     public void enrollToCourse( String studentId, Course course )

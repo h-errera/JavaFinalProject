@@ -21,17 +21,14 @@ public class Student
         super( id, name, email, birthDate );
     }
 
-    public void enrollToCourse( Course course ) {
+    public void enrollToCourse( Course course )
+    {
         //TODO implement this method
-        // Add the given course to the student's list of enrolled courses
-        ArrayList<Object> enrolledCourses = null;
-        if (enrolledCourses == null) {
-            // Initialize the enrolledCourses list if it's null
-            enrolledCourses = new ArrayList<>();
+        //if not the case, perform some enrollment action
+
+        if( ! isAttendingCourse( course.getCode() )){
+            courses.add(course);
         }
-        // Add the course to the enrolledCourses list
-    }
-        enrolledCourses.add(course);
     }
 
     public void registerApprovedCourse( Course course )
@@ -43,18 +40,16 @@ public class Student
     public boolean isAttendingCourse( String courseCode )
     {
         //TODO implement this method
-        // Check if the student is attending the course with the given course code
-        Course[] enrolledCourses = new Course[0];
+        //iterate over courses
+        //.equals() will check if they hold the same data
+        //print statement if already enrolled
 
-        if (enrolledCourses != null) {
-            for (Course course : enrolledCourses) {
-                if (course.getCourseCode().equals(courseCode)) {
-                    // The student is attending the course with the given course code
-                    return true;
-                }
+        for(Course course: courses) {
+            if (course.getCode().equals(courseCode)) {
+                System.out.println("Student is already enrolled in course "+courseCode+" !");
+                return true;
             }
         }
-        // The student is not attending the course with the given course code
         return false;
     }
 
@@ -67,7 +62,7 @@ public class Student
     @Override
     public String toString()
     {
-        return "Student {" + super.toString() + "}";
+        return "Student {" + super.toString() +", "+courses+ "}";
     }
 
     public List<Course> getEnrolledCourses() {

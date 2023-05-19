@@ -78,7 +78,7 @@ public class Main
             studentService.showSummary();
         }
 
-        private static void findStudent (StudentService studentService, Scanner scanner )
+        private static void findStudent(StudentService studentService, Scanner scanner )
         {
             System.out.println("Enter student ID: ");
             String studentId = scanner.next();
@@ -86,7 +86,8 @@ public class Main
             if (student != null) {
                 System.out.println("Student Found: ");
                 System.out.println(student);
-            } else {
+            } else
+            {
                 System.out.println("Student with Id = " + studentId + " not found");
             }
         }
@@ -99,28 +100,8 @@ public class Main
         }
 
 
-        //Testing program
-        //Creating new student object and assigning values to its properties
-
-        Student student = new Student();
-        student.setID(1);
-        student.setName("Alejandra Herrera");
-
-        //Enroll the student in some courses
-        Course course1 = new Course("CS" );
-        Course course2 = new Course("Intro to ");
-
-        student.enrollToCourse(course1);
-        student.enrollToCourse(course2);
-
-
-        //Show student and course summary
-        StudentService studentService = new StudentService();
-        studentService.showSummary();
-
     }
 
-}
 }
 
 
